@@ -15,6 +15,7 @@ const Login = () => {
     const [name,setName] = useState("");
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
+    const [passState , setPassState] = useState("password");
 
     const navigate = useNavigate();
 
@@ -116,9 +117,13 @@ const Login = () => {
             <input value={email} onChange={(e)=>setEmail(e.target.value)} className="bg-transparent outline-none" type="email" placeholder='Email Id' required />
           </div>
 
-          <div className='mb-4 flex items-center gap-3 w-full px-5 py-2.5 rounded-full bg-[#333A5C]'>
+          
+          <div className='mb-4 flex items-center gap-3 w-full px-5 py-2.5 rounded-full bg-[#333A5C] relative'>
             <img src={assets.lock_icon} alt="" />
-            <input value={password} onChange={(e)=>setPassword(e.target.value)} className="bg-transparent outline-none" type="password" placeholder='Password' required />
+            <input value={password} onChange={(e)=>{setPassword(e.target.value)}} className="bg-transparent outline-none" type={passState} placeholder='Password' required />
+            { passState=="password" ? (<img onClick={()=>{setPassState("text")}} src={assets.pass_show} alt="" className="w-4 absolute right-5 cursor-pointer" />)
+            : (<img onClick={()=>{setPassState("password")}} src={assets.pass_hide} alt="" className="w-4 absolute right-5 cursor-pointer" />)
+            }
           </div>
 
           {(state === "Login") && (<p onClick={()=>navigate("/reset-password")} className='text-indigo-500 mb-4 cursor-pointer'>Forgot password?</p>)}

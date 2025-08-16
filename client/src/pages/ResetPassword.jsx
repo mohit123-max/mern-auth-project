@@ -117,7 +117,7 @@ const ResetPassword = () => {
       (<form onSubmit={submitHandler} className="bg-slate-900 p-8 rounded-lg shadow-lg w-96 text-sm">
         
         <div className='mb-4 flex items-center gap-3 w-full px-5 py-2.5 rounded-full bg-[#333A5C]'>
-          <img src={assets.lock_icon} alt="" />
+          <img src={assets.person_icon} alt="" />
           <input value={otp} onChange={(e)=>{setOtp(e.target.value)}} className="bg-transparent outline-none" type="text" placeholder='Enter OTP' required />
         </div>
 
