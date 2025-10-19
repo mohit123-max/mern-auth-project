@@ -1,5 +1,6 @@
 # MERN Authentication Project
 [![Click here to visit site]](https://user-auth-mern-project.netlify.app/)
+(Since I am using gmail smtp and render don't allow outing of smtp request , it is not working as expected.)
 
 This repository contains a full-stack MERN (MongoDB, Express, React, Node.js) application that provides a complete user authentication system. It includes user registration, login, session management with JWT tokens, email verification, and password reset functionality.
 
